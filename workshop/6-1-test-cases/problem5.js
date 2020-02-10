@@ -8,15 +8,32 @@ let verifyEquals = require('../../assets/verify-equals');
 // - If one of the numbers is not passed, or if anything other than numbers are passed, return undefined.
 
 function f(input) {
+    console.log(typeof input + ' base input')
+    console.log(input[0] + 'input0')
+    let first = input[0];
+    console.log(first + ' first');
+    let second = input[1];
+    console.log(typeof first + "typeof first");
+    console.log(typeof second + "typeof second");
+    if ((typeof first !== 'number') || (typeof second !== 'number')) {
+        return 'this is not a number'
+    }
+    let mult = first * second;
+    // if (mult === NaN) {
+    //     return mult;
+    // }
+    console.log(mult)
+    console.log (mult)
     
+    return mult;
 }
 
 // Step 2
 // We need 5 test cases. The first input is provided.
 // Don't forget to test all of the question parameters
 
-let inputs = [[2, 7]];
-let outputs = [14];
+let inputs = [[2, 7], [7, 2], ['a', 'b'], ['8', '9'] ["why", 'god']];
+let outputs = [14, 14, 'this is not a number', undefined, undefined];
 
 // Step 3
 // Run this file in the debugger.

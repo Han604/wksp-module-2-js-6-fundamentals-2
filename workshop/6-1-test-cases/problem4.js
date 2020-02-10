@@ -10,6 +10,7 @@ let verifyEquals = require('../../assets/verify-equals');
 // f(["abc", 0]);   // a
 
 function f(arr) {
+    console.log(arr[0])
     const letter = arr[0].charAt(arr[1]);
     if (letter === '') return undefined;
     return letter;
@@ -19,8 +20,8 @@ function f(arr) {
 // We need 8 test cases. The first input is provided.
 // Don't forget to test all of the question parameters
 
-let inputs = [['hello', 4], ['', 2]];
-let outputs = ['o', undefined];
+let inputs = [['hello', 4], ['', 2], [4, 'hello'], [2, ''], [2, 2], ['hello', 'hello'], ['misunderstanding', 19]];
+let outputs = ['o', undefined, undefined, undefined, undefined, undefined, undefined, undefined];
 
 // Step 3
 // Run this file in the debugger.
