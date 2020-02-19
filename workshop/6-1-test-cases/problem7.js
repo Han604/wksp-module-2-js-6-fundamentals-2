@@ -13,15 +13,29 @@ let verifyEquals = require('../../assets/verify-equals');
 // f(["foo", -1]) // ""
 
 function f(arr) {
-    
+    let string = arr[0];
+    let mult = arr[1];
+    console.log (mult + ' mult')
+    if (typeof string !== 'string') {
+        return undefined;
+    }
+    if (typeof mult !== 'number') {
+        return undefined;
+    }
+    if (mult < 1) {
+        return ''
+    }
+    let answer = string.repeat([mult]);
+    return answer;
 }
+console.log(f([9, 'run']))
 
 // Step 2
 // We need 7 test cases.
 // Don't forget to test all of the question parameters
 
-let inputs = [];
-let outputs = [];
+let inputs = [['run',8],[8,8],[8,'run'],['run','run'],['run',-8],['run', 0],['run', '8']];
+let outputs = ['runrunrunrunrunrunrunrun', undefined, undefined, undefined, '', '', undefined];
 
 // Step 3
 // Run this file in the debugger.
