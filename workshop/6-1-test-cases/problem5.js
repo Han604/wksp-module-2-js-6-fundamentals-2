@@ -7,16 +7,29 @@ let verifyEquals = require('../../assets/verify-equals');
 // - The input of the function is an array.
 // - If one of the numbers is not passed, or if anything other than numbers are passed, return undefined.
 
-function f(input) {
-    
+function f(arr) {
+    // console.log(arr.length)
+    // console.log(arr)
+    let undefinedCheck = false
+    if (arr.length !== 2) {
+        undefinedCheck = true;
+        return undefined;
+    }
+    if (typeof arr[0] !== 'number' || typeof arr[1] !== 'number') {
+        undefinedCheck = true;
+        return undefined;
+    }
+    console.log(undefinedCheck);
+    console.log('check')
+    return arr[0] * arr[1]
 }
 
 // Step 2
 // We need 5 test cases. The first input is provided.
 // Don't forget to test all of the question parameters
 
-let inputs = [[2, 7]];
-let outputs = [14];
+let inputs = [[2, 7], [7, 2], ['a', 'b', 'c'], [92, 91] ["why", 'god']];
+let outputs = [14, 14, undefined, undefined, undefined];
 
 // Step 3
 // Run this file in the debugger.

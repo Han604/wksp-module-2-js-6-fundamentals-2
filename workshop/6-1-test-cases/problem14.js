@@ -11,8 +11,8 @@ let verifyEquals = require('../../assets/verify-equals');
 //      "Lorem ipsumos dolor sit amet consectetur adipisicing elit. Magni quisquam"
 
 // the output would be:
-//      Lorem ipsumos dolor sit amet consectetur
-//      adipisicing elit. Magni quisquam"
+    //  Lorem ipsumos dolor sit amet consectetur
+    //  adipisicing elit. Magni quisquam"
 
 // instead of:
 //      Lorem ipsumos dolor sit amet consectetur
@@ -20,9 +20,28 @@ let verifyEquals = require('../../assets/verify-equals');
 
 // even though there is a space before the a in adipisicing
 
-function f(str) {
+//can i split everything into single character strings, count them and then create a function to splice an \n
+//with an if statement to see if we can check if the next string is an '' so we can remove() it?????
 
+function f(str) {
+  let charCount = 0;
+  arrayOfSingleCharacters = str.split('');
+  for (i = 0; i < arrayOfSingleCharacters.length; i++) {
+    if (charCount === 40) {
+      charCount = 0;
+      arrayOfSingleCharacters.splice(i, 0, '\n')
+    }
+    if ((i + 1) === ' ') {
+      arrayOfSingleCharacters.splice(i + 1, 1);
+    }
+    charCount += 1;
+    console.log(charCount);
+    console.log(arrayOfSingleCharacters[i])
+  }
+  return arrayOfSingleCharacters.join('');
 }
+
+console.log(f("Lorem ipsumos dolor sit amet consectetur adipisicing elit. Magni quisquam"))
 
 // Test cases
 let inputs = [];

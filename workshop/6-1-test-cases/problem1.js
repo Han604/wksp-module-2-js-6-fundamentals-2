@@ -8,7 +8,11 @@ let verifyEquals = require('../../assets/verify-equals');
 // If the string does not have a first character, return undefined.
 
 function f(str) {
-
+    firstLetter = str.substring(0,1);
+    if (str === "") {
+        return undefined
+    }
+    return firstLetter
 }
 
 // Step 2

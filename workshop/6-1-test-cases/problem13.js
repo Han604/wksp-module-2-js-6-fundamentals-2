@@ -7,14 +7,26 @@ let verifyEquals = require('../../assets/verify-equals');
 // A palindrome is a string that is the same if you reverse it.
 // RADAR -> Yes
 // JAVASCRIPT -> No
+// can i do an index of first letter and index of the last letter?
+// can i do index[i] && string.length - i === true? 
 
 function f(str) {
-
+    let palindromeCheck = false;
+    for (i = 0; i < str.length; i++) {
+        console.log (str[i])
+        console.log (str[str.length - 1 - i])
+        if (str[i] === str[str.length - i - 1]) {
+            palindromeCheck = true;
+        } else {
+            return false;
+        }
+    }
+    return palindromeCheck;
 }
 
 // Test cases
-let inputs = [];
-let outputs = [];
+let inputs = ['lol', 'tattarrattat', 'blue', 'colic', 't\'a\'t\'a\'t'];
+let outputs = [true, true, false, false, true];
 
 // STOP -----------------------------------------------------------------
 // No code changes below. This is the actual test that will run your test cases and validate your function.

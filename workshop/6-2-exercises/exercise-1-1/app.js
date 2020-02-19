@@ -14,3 +14,12 @@
 // Guidelines
 // - write only one event listener
 // - use a switch statement
+
+switch (key) {
+    case value:
+        
+        break;
+
+    default:
+        break;
+}
